@@ -54,7 +54,6 @@ android {
     buildTypes.configureEach {
         buildConfigField("String", "TOMTOM_API_KEY", "\"$tomtomApiKey\"")
     }
-
 }
 
 dependencies {
@@ -66,6 +65,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.fragment)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -76,4 +76,5 @@ dependencies {
 
     val version = "1.14.0"
     implementation("com.tomtom.sdk.navigation:navigation-online:$version")
+    implementation("com.tomtom.sdk.maps:map-display:$version")
 }
