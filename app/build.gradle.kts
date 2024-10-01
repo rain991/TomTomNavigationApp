@@ -77,4 +77,10 @@ dependencies {
     val version = "1.14.0"
     implementation("com.tomtom.sdk.navigation:navigation-online:$version")
     implementation("com.tomtom.sdk.maps:map-display:$version")
+    implementation("com.tomtom.sdk.location:provider-android:$version")
+    implementation("com.tomtom.sdk.location:provider-map-matched:$version")
+    implementation("com.tomtom.sdk.location:provider-simulation:$version")
+    implementation("com.tomtom.sdk.datamanagement:navigation-tile-store:$version")
+    implementation("com.tomtom.sdk.navigation:ui:$version")
+    implementation("com.tomtom.sdk.routing:route-planner-online:$version")
 }
