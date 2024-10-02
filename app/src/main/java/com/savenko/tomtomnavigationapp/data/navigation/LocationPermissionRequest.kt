@@ -1,5 +1,6 @@
 package com.savenko.tomtomnavigationapp.data.navigation
 
+import android.Manifest
 import android.util.Log
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -18,18 +19,22 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 
 @Composable
-fun MyComposable() {
+fun LocationPermissionRequest() {
     val locationPermissionsState = areLocationPermissionsGranted()
-    if (!locationPermissionsState) {
-        val requestPermissionLauncher = rememberLauncherForActivityResult(
-            ActivityResultContracts.RequestPermission()
-        ) { isGranted ->
-            if (isGranted) {
-                Log.d("TAG", "MyComposable: granted perm. ")
-            } else {
-                Log.d("TAG", "MyComposable: perm. is not granted")
-            }
+    val requestPermissionLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted ->
+        if (isGranted) {
+            Log.d("TAG", "MyComposable: granted perm. ")
+        } else {
+            Log.d("TAG", "MyComposable: perm. is not granted")
         }
     }
 
+    LaunchedEffect(key1 = locationPermissionsState) {
+      if(!locationPermissionsState){
+          requestPermissionLauncher.launch(Manifest.permission.ACCESS_COARSE_LOCATION)
+          requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
+      }
+    }
 }

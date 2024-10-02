@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.fragment.app.FragmentActivity
+import com.savenko.tomtomnavigationapp.data.navigation.LocationPermissionRequest
 import com.savenko.tomtomnavigationapp.presentation.TomTomMapView
 import com.savenko.tomtomnavigationapp.ui.theme.TomTomNavigationAppTheme
 
@@ -18,6 +19,7 @@ class TomTomNavigationActivity : FragmentActivity() {
         enableEdgeToEdge()
         setContent {
             TomTomNavigationAppTheme {
+                LocationPermissionRequest()
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     TomTomMapView(modifier = Modifier
                         .fillMaxSize()
