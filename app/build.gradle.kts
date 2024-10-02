@@ -57,30 +57,36 @@ android {
 }
 
 dependencies {
+    // Basic dependencies
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
     implementation(libs.androidx.fragment)
-    testImplementation(libs.junit)
+
+
+    // Compose
+    implementation(libs.androidx.activity.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.material3)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+
+    // Testing
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+    testImplementation(libs.junit)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    val version = "1.14.0"
-    implementation("com.tomtom.sdk.navigation:navigation-online:$version")
-    implementation("com.tomtom.sdk.maps:map-display:$version")
-    implementation("com.tomtom.sdk.location:provider-android:$version")
-    implementation("com.tomtom.sdk.location:provider-map-matched:$version")
-    implementation("com.tomtom.sdk.location:provider-simulation:$version")
-    implementation("com.tomtom.sdk.datamanagement:navigation-tile-store:$version")
-    implementation("com.tomtom.sdk.navigation:ui:$version")
-    implementation("com.tomtom.sdk.routing:route-planner-online:$version")
+    // TomTom
+    implementation(libs.tomtom.navigation.online)
+    implementation(libs.tomtom.map.display)
+    implementation(libs.tomtom.provider.android)
+    implementation(libs.tomtom.provider.map.matched)
+    implementation(libs.tomtom.provider.simulation)
+    implementation(libs.tomtom.navigation.tile.store)
+    implementation(libs.tomtom.ui)
+    implementation(libs.tomtom.route.planner.online)
 }
