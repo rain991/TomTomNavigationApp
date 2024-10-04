@@ -9,7 +9,8 @@ lifecycleRuntimeKtx = "2.8.6"
 activityCompose = "1.9.2"
 composeBom = "2024.09.03"
 fragment = "1.8.4"
-tomtom = "1.14.0"
+tomtom = "1.15.0"
+appcompat = "1.7.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -35,6 +36,7 @@ tomtom-provider-simulation = { module = "com.tomtom.sdk.location:provider-simula
 tomtom-navigation-tile-store = { module = "com.tomtom.sdk.datamanagement:navigation-tile-store", version.ref = "tomtom" }
 tomtom-ui = { module = "com.tomtom.sdk.navigation:ui", version.ref = "tomtom" }
 tomtom-route-planner-online = { module = "com.tomtom.sdk.routing:route-planner-online", version.ref = "tomtom" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
