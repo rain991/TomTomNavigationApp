@@ -25,9 +25,9 @@ fun LocationPermissionRequest() {
         ActivityResultContracts.RequestPermission()
     ) { isGranted ->
         if (isGranted) {
-            Log.d("TAG", "MyComposable: granted perm. ")
+            Log.d("TAG", "LocationPermissionRequest: granted location perm. ")
         } else {
-            Log.d("TAG", "MyComposable: perm. is not granted")
+            Log.d("TAG", "LocationPermissionRequest: location perm. is not granted")
         }
     }
 
